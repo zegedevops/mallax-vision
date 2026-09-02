@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mallax Vision — Merchant Face Verification</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b1f1c;
+        --card: #102824;
+        --text: #f3f5f8;
+        --muted: #b7c7c3;
+        --accent: #5eead4;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(45, 212, 191, 0.18), transparent 42%),
+          radial-gradient(circle at 80% 80%, rgba(13, 148, 136, 0.22), transparent 40%),
+          var(--bg);
+        color: var(--text);
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+      h1 { font-size: 2.25rem; line-height: 1.15; margin: 0.75rem 0 1rem; }
+      p { color: var(--muted); line-height: 1.6; }
+      .kicker {
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .card {
+        margin-top: 2rem;
+        padding: 1.25rem 1.35rem;
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+      }
+      a {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="kicker">Shopify returns · identity layer</p>
+      <h1>Mallax Vision</h1>
+      <p>
+        Portfolio demo that adds a face-verification step after merchant login,
+        then unlocks a mock Shopify returns dashboard.
+      </p>
+      <div class="card">
+        <p>
+          GitHub Pages can only host this static page. The full app needs a Node
+          server for login, registration, sessions, and the live
+          <code>/compare-face</code> API.
+        </p>
+        <p>
+          Source:
+          <a href="https://github.com/zegedevops/mallax-vision">github.com/zegedevops/mallax-vision</a>
+        </p>
+        <p>Run locally: <code>npm install</code> then <code>npm run dev</code>.</p>
+      </div>
+    </main>
+  </body>
+</html>
