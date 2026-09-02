@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { demoImageDir } from "@/lib/storage-paths";
 
 const MAX_BYTES = 3.5 * 1024 * 1024;
 const ALLOWED_TYPES: Record<string, string> = {
@@ -23,21 +24,16 @@ export async function saveReferenceImageToDemoFolder(file: File, merchantId: str
     throw new Error("Upload a JPEG, PNG, or WebP photo.");
   }
 
-  const demoDir = path.join(
-    /* turbopackIgnore: true */ process.cwd(),
-    "public",
-    "demo",
-  );
+  const demoDir = demoImageDir();
   await mkdir(demoDir, { recursive: true });
 
   const filename = `enrolled-${merchantId}${ext}`;
-  const relativePath = `public/demo/${filename}`;
   const absolute = path.join(demoDir, filename);
   const bytes = Buffer.from(await file.arrayBuffer());
   await writeFile(absolute, bytes);
 
   return {
-    referenceImagePath: relativePath,
-    referenceImageUrl: `/demo/${filename}`,
+    referenceImagePath: absolute,
+    referenceImageUrl: "/api/enrolled-photo",
   };
 }

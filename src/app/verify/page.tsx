@@ -44,7 +44,7 @@ export default async function VerifyPage() {
                 Enrolled photo · {session.name}
               </p>
               <p className="text-xs text-slate-500">
-                Compared against the photo stored in public/demo for this account.
+                Compared against the enrolled photo for this account.
               </p>
             </div>
           </div>

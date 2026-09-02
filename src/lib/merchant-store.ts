@@ -6,11 +6,9 @@ import {
   type DemoMerchant,
 } from "@/lib/merchants";
 
-const STORE_PATH = path.join(
-  /* turbopackIgnore: true */ process.cwd(),
-  "data",
-  "registered-merchants.json",
-);
+import { merchantStorePath } from "@/lib/storage-paths";
+
+const STORE_PATH = merchantStorePath();
 
 async function readRegistered(): Promise<DemoMerchant[]> {
   try {
